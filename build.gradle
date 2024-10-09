@@ -161,3 +161,9 @@ javadoc {
     source = sourceSets.api.allJava
     classpath += sourceSets.api.compileClasspath
 }
+dependencies {
+    // Update the Fabric Loader version
+    minecraft "net.fabricmc:fabric-loader:0.14.10" // Use a valid version
+    // Other dependencies...
+}
+
