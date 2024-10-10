@@ -39,11 +39,11 @@ allprojects {
     version = rootProject.mod_version
     group = rootProject.maven_group
 
-    sourceCompatibility = targetCompatibility = JavaVersion.toVersion(project.java_version)
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_21
     
     java {
         toolchain {
-            languageVersion.set(JavaLanguageVersion.of(sourceCompatibility.majorVersion.toInteger()))
+            languageVersion.set(JavaLanguageVersion.of(21))
         }
     }
 
@@ -105,7 +105,7 @@ allprojects {
     tasks.withType(JavaCompile).configureEach {
         it.options.encoding = "UTF-8"
 
-        def targetVersion = project.java_version.toInteger()
+        def targetVersion = 17
         if (JavaVersion.current().isJava9Compatible()) {
             it.options.release = targetVersion
         }
